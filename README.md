@@ -4,7 +4,7 @@
 add jayuda:flx-report to your project
 
 ## Screen Shoot
-![display report](/images/2016/08/Screen Shot 2016-08-26 at 17.21.06.png)
+![Screen shoot report](Screen Shot 2016-08-26 at 17.21.06.png)
 
 ## Usage
 create route report
