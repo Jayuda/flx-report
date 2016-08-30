@@ -18,8 +18,8 @@ Set Session parameter
 ```javascript
 Session.set("reportNama", sReportName);
 Session.set("reportKolom", oReportFieldDisplay);
-Session.set("reportBackUrl", sBackUrl);
 Session.set("reportCollections", sCollections);
+Session.set("reportBackUrl", sBackUrl);
 Session.set("reportCollectionsAll", cCollectionsInitial.find(aReportFilter,aReportOptions).fetch());
 Session.set("reportNumber", sReportNumber);
 Session.set("reportFootnote", sReportFootNote);
