@@ -13,22 +13,10 @@
                 {{> QRCode text="{{reportNumber}}" size="64px" }}
             </td>
         </div>
+        <div style="position:relative;width:80%;left:10%;text-center;">
+           <h3 style="text-align:center;">{{reportNama}}</h3>
+        </div>
         <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="{{colSpan}}">
-                    <table>
-                        <tr>
-                            <BR><BR>
-                        </tr>
-                        <tr>
-                            <td class="title" style="text-align:center;">
-                                <h3 style="text-align:center;">{{reportNama}}</h3>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
             <tr class="heading">
                 {{#each sKolom}}
                     <td>

@@ -16,6 +16,20 @@ Router.route('/report', function () {
 
 Set Session parameter
 ```javascript
+
+var sReportName = "NAME OF YOUR REPORT";
+var sReportNumber = "NO REPORT";
+var sReportFootNote = "any footnote to your report";
+var sCollections = "name of collections";
+var sBackUrl = "router on back buttons";
+var cCollectionsInitial = DECLARATIONCOLLECTIONS;
+var aReportFilter = {"FILTER REPORT TO YOUR collections"};
+var aReportOptions = {"ANY OPTION (SORT, FIELDS, LIMIT)"};
+var oReportFieldDisplay = [
+	{"NAMA":"NAME TO display", "fields": "NAME FIELDS ON collections"}
+];
+
+
 Session.set("reportNama", sReportName);
 Session.set("reportKolom", oReportFieldDisplay);
 Session.set("reportCollections", sCollections);
@@ -24,7 +38,7 @@ Session.set("reportCollectionsAll", cCollectionsInitial.find(aReportFilter,aRepo
 Session.set("reportNumber", sReportNumber);
 Session.set("reportFootnote", sReportFootNote);
 
-Router.go("report");
+Router.go("flxreport");
 ```
 
 add template menu
