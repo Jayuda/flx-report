@@ -4,6 +4,9 @@
     {{>footNoteReport}}
     {{>menuBackBottom}}
     <div class="invoice-box" style="max-width:1600px;">
+         <div style="position:relative;width:80%;left:10%;text-center;">
+             <h3 style="text-align:center;">{{reportNama}}</h3>
+         </div>
         <div style="position: fixed; top: 30px;left:30px;text-align-all: right;">
             Report No : {{reportNumber}}<BR>
             Created : {{created}}
@@ -13,10 +16,19 @@
                 {{> QRCode text="{{reportNumber}}" size="64px" }}
             </td>
         </div>
-        <div style="position:relative;width:80%;left:10%;text-center;">
-           <h3 style="text-align:center;">{{reportNama}}</h3>
-        </div>
         <table cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="{{colSpan}}">
+                    <table>
+                        <tr>
+                            <BR><BR>
+                        </tr>
+                        <tr>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
             <tr class="heading">
                 {{#each sKolom}}
                     <td>
