@@ -38,7 +38,7 @@ Session.set("reportCollectionsAll", cCollectionsInitial.find(aReportFilter,aRepo
 Session.set("reportNumber", sReportNumber);
 Session.set("reportFootnote", sReportFootNote);
 
-Router.go("flxreport");
+Router.go("report");
 ```
 
 add template menu

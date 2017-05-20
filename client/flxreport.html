@@ -4,14 +4,14 @@
     {{>footNoteReport}}
     {{>menuBackBottom}}
     <div class="invoice-box" style="max-width:1600px;">
-         <div style="position:relative;width:80%;left:10%;text-center;">
+         <div style="position:relative;width:100%;left:10%;text-center;">
              <h3 style="text-align:center;">{{reportNama}}</h3>
          </div>
-        <div style="position: fixed; top: 30px;left:30px;text-align-all: right;">
+        <div style="position: relative; top: 30px;left:30px;text-align-all: right;">
             Report No : {{reportNumber}}<BR>
             Created : {{created}}
         </div>
-        <div style="position: fixed; top: 30px;right:30px;">
+        <div style="position: relative; top: 30px;right:30px;">
             <td>
                 {{> QRCode text="{{reportNumber}}" size="64px" }}
             </td>
@@ -43,7 +43,7 @@
                 </tr>
             {{/each}}
 
-            <tr class="total" style="position: fixed;bottom: 120px;right:80px;">
+            <tr class="total" style="position: relative;bottom: 120px;right:80px;">
                 <td style="text-align: right;">
                     {{{reportFootnote}}}
                 </td>
