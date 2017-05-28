@@ -30,12 +30,14 @@ var oReportFieldDisplay = [
 ];
 
 
+Session.set("reportCompany", reportCompany);
 Session.set("reportNama", sReportName);
 Session.set("reportKolom", oReportFieldDisplay);
 Session.set("reportCollections", sCollections);
 Session.set("reportBackUrl", sBackUrl);
 Session.set("reportCollectionsAll", cCollectionsInitial.find(aReportFilter,aReportOptions).fetch());
 Session.set("reportNumber", sReportNumber);
+Session.set("totalvalue", "");
 Session.set("reportFootnote", sReportFootNote);
 
 Router.go("report");

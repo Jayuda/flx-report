@@ -11,6 +11,12 @@ Template.flxreport.created = function () {
 	data = [];
 };
 Template.flxreport.helpers({
+	reportCompany: function () {
+		return Session.get("reportCompany");
+	},
+	totalvalue: function () {
+		return Session.get("totalvalue");
+	},
 	reportFootnote: function () {
 		return Session.get("reportFootnote");
 	},

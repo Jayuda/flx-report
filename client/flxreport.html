@@ -1,21 +1,25 @@
 <template name="flxreport">
-    {{>menuPrint}}
-    {{>menuDownload}}
     {{>footNoteReport}}
-    {{>menuBackBottom}}
+    <div class='no-print'>
+      {{>menuPrint}}
+      {{>menuDownload}}
+      {{>menuBackBottom}}
+    </div>
     <div class="invoice-box" style="max-width:1600px;">
-         <div style="position:relative;width:100%;left:10%;text-center;">
-             <h3 style="text-align:center;">{{reportNama}}</h3>
-         </div>
-        <div style="position: relative; top: 30px;left:30px;text-align-all: right;">
-            Report No : {{reportNumber}}<BR>
-            Created : {{created}}
+        <div style="position: absolute; top: 30px;left:30px;text-align-all: right;">
+            {{{reportCompany}}}<BR>
         </div>
-        <div style="position: relative; top: 30px;right:30px;">
+        <BR><BR>
+       <div style="position:absolute;width:100%;text-center;">
+            <h3 style="text-align:center;"><B>{{{reportNama}}}</B><BR>{{{reportNumber}}}</h3>
+            <BR><BR>
+       </div>
+        <div style="position: absolute; top: 10px;right:10px;">
             <td>
                 {{> QRCode text="{{reportNumber}}" size="64px" }}
             </td>
         </div>
+        <BR>
         <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="{{colSpan}}">
@@ -42,13 +46,16 @@
                     {{{DATA}}}
                 </tr>
             {{/each}}
-
-            <tr class="total" style="position: relative;bottom: 120px;right:80px;">
-                <td style="text-align: right;">
-                    {{{reportFootnote}}}
-                </td>
+            <tr class="total">
+              <BR>
+              <td style="text-align: right;position:absolute;top:2px;right:100px;font-weight: 600;">
+                  {{{totalvalue}}}
+              </td>
             </tr>
         </table>
+        <div class="col-md-12 col-sm-12" style="text-align: left;">
+            {{{reportFootnote}}}
+        </div>
     </div>
 
 </template>
