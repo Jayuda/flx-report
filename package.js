@@ -1,6 +1,6 @@
 Package.describe({
     name: 'jayuda:flx-report',
-    version: '0.2.7',
+    version: '0.2.8',
     summary: "Automatic Generate Report Template From collections ",
     git: 'https://github.com/Jayuda/flx-report',
     documentation: 'README.md'
