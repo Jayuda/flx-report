@@ -30,7 +30,9 @@ var oReportFieldDisplay = [
 ];
 
 
+
 Session.set("reportCompany", reportCompany);
+Session.set("reportTo", reportTo);
 Session.set("reportNama", sReportName);
 Session.set("reportKolom", oReportFieldDisplay);
 Session.set("reportCollections", sCollections);

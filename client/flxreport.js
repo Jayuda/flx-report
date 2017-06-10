@@ -11,6 +11,21 @@ Template.flxreport.created = function () {
 	data = [];
 };
 Template.flxreport.helpers({
+	separator: function () {
+		return Session.get("separator");
+	},
+	ttdleft: function () {
+		return Session.get("ttdleft");
+	},
+	ttdright: function () {
+		return Session.get("ttdright");
+	},
+	reportTo: function () {
+		return Session.get("reportTo");
+	},
+	headerRight: function () {
+		return Session.get("headerRight");
+	},
 	reportCompany: function () {
 		return Session.get("reportCompany");
 	},
@@ -43,9 +58,16 @@ Template.flxreport.helpers({
 		DataColl.forEach(function (obj){
 			var tdData = "";
 			var reportKolom = Session.get("reportKolom");
+			var nilaiData = "";
 			for (i = 0; i < reportKolom.length; i++) {
 				namaKolom = reportKolom[i].fields;
-				tdData = tdData + "<td>" + obj["" + namaKolom + ""] + "</td>";
+				nilaiData = "";
+				if(ikiAngkoUdu(obj[namaKolom])) {
+					nilaiData = parseInt(obj[namaKolom]).toLocaleString();
+				} else {
+					nilaiData = obj[namaKolom];
+				}
+				tdData = tdData + "<td>" + nilaiData + "</td>";
 			}
 			data.push({"DATA":tdData});
 		});
@@ -84,7 +106,7 @@ Template.flxreport.events({
 	},
 	'click a.download': function (e, tpl) {
 		e.preventDefault();
-		var nameFile = Session.get("reportNama") + "_By_" + username();
+		var nameFile = Session.get("reportNama") + "_By_" + Meteor.user().profile.name;
 
 		Meteor.call('downloadReport', Session.get("reportCollectionsAll"), function (err, fileContent) {
 			if (fileContent) {
@@ -97,3 +119,7 @@ Template.flxreport.events({
 	},
 
 });
+
+ikiAngkoUdu = function (n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+};
